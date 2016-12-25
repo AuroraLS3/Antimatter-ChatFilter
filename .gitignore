@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+/AntimatterChatFilter/nbproject/private/
+/AntimatterChatFilter/build/
+/AntimatterChatFilter/dist/

@@ -1,0 +1,42 @@
+name: AntimatterFilter
+main: com.djrapitops.antimatter.Antimatter
+version: 1.0.0
+
+commands:
+  amclear:
+    usage: /amclear
+    description: clear chat screen for everyone
+  amreload:
+    usage: /amreload
+    description: reloads plugin config
+
+permissions:
+  antimatter.clear:
+    description: Chat Clear command /amclear
+    default: false
+  antimatter.reload:
+    description: Reloads config.
+    default: false
+  antimatter.bypass:
+    description: Bypass all filtering
+    default: false
+  antimatter.bypass.url:
+    description: Bypass the url filtering
+    default: false
+  antimatter.bypass.ip:
+    description: Bypass IP filtering
+    default: false
+  antimatter.bypass.spam:
+    description: Bypass spam filtering
+    default: false
+  antimatter.bypass.caps:
+    description: Bypass Caps filtering
+    default: false
+  antimatter.bypass.char:
+    description: Bypass filtering of too many same characters
+    default: false
+  antimatter.bypass.filter:
+    description: Bypass rules set in config
+    default: false
+  
+  

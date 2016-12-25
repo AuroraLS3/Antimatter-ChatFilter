@@ -1,0 +1,17 @@
+debug: true
+maxcapspercent: 40
+spamsimilaritypercent: 90
+sendMsgSenderMsgIfBlocked: true
+enabled:
+  antiCaps: true
+  antiIp: true
+  antiUrl: true
+  antiSpam: true
+  antiSamechars: true
+  antiReplacer: true
+replacerules:
+    - shit > poopie
+    - fuck > wump
+    - damn > great
+    - fuk > wump
+    - arse > bottom
