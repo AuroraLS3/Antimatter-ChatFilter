@@ -33,7 +33,7 @@ public class AntimatterChatListener implements Listener {
         if (p.hasPermission("antimatter.bypass")) {
             return;
         }
-        String blocked = "[Antimatter] Your message was blocked by chat filter ";
+        String blocked = plugin.getConfig().getString("prefix")+" "+plugin.getConfig().getString("messageIfBlocked")+" ";
         boolean bypassIP = p.hasPermission("antimatter.bypass.ip");
         boolean bypassUrl = p.hasPermission("antimatter.bypass.url");
         boolean bypassSpam = p.hasPermission("antimatter.bypass.spam");
@@ -43,7 +43,7 @@ public class AntimatterChatListener implements Listener {
             if (!AntiIP.pass(msg)) {
                 event.setCancelled(true);
                 if (sendMsg) {
-                    event.getPlayer().sendMessage(ChatColor.RED + blocked + "(IP)");
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', blocked + "(IP)"));
                 }
                 return;
             }
@@ -52,7 +52,7 @@ public class AntimatterChatListener implements Listener {
             if (!AntiUrl.pass(msg)) {
                 event.setCancelled(true);
                 if (sendMsg) {
-                    event.getPlayer().sendMessage(ChatColor.RED + blocked + "(Url)");
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', blocked + "(Url)"));
                 }
                 return;
             }
@@ -61,7 +61,7 @@ public class AntimatterChatListener implements Listener {
             if (!AntiSpam.pass(event)) {
                 event.setCancelled(true);
                 if (sendMsg) {
-                    event.getPlayer().sendMessage(ChatColor.RED + blocked + "(Spam)");
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', blocked + "(Spam)"));
                 }
             }
         }

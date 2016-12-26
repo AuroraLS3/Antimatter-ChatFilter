@@ -11,6 +11,7 @@ package com.djrapitops.antimatter;
 
 import com.djrapitops.antimatter.filters.AntiReplacer;
 import com.djrapitops.antimatter.listener.AntimatterChatListener;
+import com.djrapitops.antimatter.utils.MiscUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -36,12 +37,16 @@ public class Antimatter extends JavaPlugin {
                 + "maxcapspercent - How much % of a message can be Caps before it is lowercased (default 40)\n"
                 + "spamsimilaritypercent - How similar two messages must be to count as spam (default 90)\n"
                 + "sendMsgSenderMsgIfBlocked - Notify the sender of the message if the message is blocked\n"
+                + "prefix - Plugin message prefix\n"
+                + "messageIfBlocked - Message that is shown if message is blocked (+ reason)\n"
                 + "enabled - Disable various parts and filters here\n"
                 + "replacerules - wordtoreplace > replacewith\n"
                 + ""
         );
 
         saveConfig();
+        
+        log(MiscUtils.checkVersion());
         
         getCommand("amclear").setExecutor(new ClearChatCommand());
         replacer = new AntiReplacer();

@@ -2,6 +2,8 @@ debug: true
 maxcapspercent: 40
 spamsimilaritypercent: 90
 sendMsgSenderMsgIfBlocked: true
+prefix: '&c[Antimatter]'
+messageIfBlocked: '&cYour message was blocked by chat filter'
 enabled:
   antiCaps: true
   antiIp: true

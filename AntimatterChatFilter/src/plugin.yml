@@ -1,6 +1,6 @@
 name: AntimatterFilter
 main: com.djrapitops.antimatter.Antimatter
-version: 1.0.0
+version: 1.0.1
 
 commands:
   amclear:
@@ -13,10 +13,10 @@ commands:
 permissions:
   antimatter.clear:
     description: Chat Clear command /amclear
-    default: false
+    default: op
   antimatter.reload:
     description: Reloads config.
-    default: false
+    default: op
   antimatter.bypass:
     description: Bypass all filtering
     default: false
