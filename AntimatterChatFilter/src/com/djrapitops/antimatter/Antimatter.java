@@ -1,12 +1,3 @@
-/*
-AntiUrl which actually blocks it unlike half these shitty plugins
-AntiIP which actually blocks it unlike half these shitty plugins
-AntiSwear with a replacement config of my choice
-ClearChat to do what it says on the tin
-AntiBot to stop those pests
-Antispam To stop people being able to type the same characters repeatedly in chat and say they said 'noooooooo' it would block that
-AntiCaps as a percentage that I can reduce or extend for example if I had the config as 50% if they have more than 50% of their sentence in caps itll make it non-caps
- */
 package com.djrapitops.antimatter;
 
 import com.djrapitops.antimatter.filters.AntiReplacer;

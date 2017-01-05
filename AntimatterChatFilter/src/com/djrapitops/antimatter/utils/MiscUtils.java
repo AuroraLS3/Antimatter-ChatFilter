@@ -6,7 +6,6 @@ import java.util.Scanner;
 import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 
 public class MiscUtils {
-//    <h1>Plan - Player Analytics <span class="muted">
 
     public static String checkVersion() {
         Antimatter plugin = getPlugin(Antimatter.class);
