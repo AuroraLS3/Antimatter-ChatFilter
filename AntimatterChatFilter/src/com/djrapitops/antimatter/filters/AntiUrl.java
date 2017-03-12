@@ -4,12 +4,14 @@ import com.djrapitops.antimatter.Antimatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.bukkit.configuration.file.FileConfiguration;
 import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 
 public class AntiUrl {
 
     public static boolean pass(String message) {
-        if (!getPlugin(Antimatter.class).getConfig().getBoolean("enabled.antiUrl")) {
+        FileConfiguration config = getPlugin(Antimatter.class).getConfig();
+        if (!config.getBoolean("enabled.antiUrl")) {
             return true;
         }
         String[] domains = {".aero", ".biz", ".cat", ".com", ".coop", ".edu", ".gov", ".info", ".int", ".jobs", ".mil", ".mobi", ".museum",
@@ -37,10 +39,16 @@ public class AntiUrl {
             return true;
         }
         if (!Arrays.asList(message.split("\\s*")).parallelStream()
-                .noneMatch((string) -> (string.contains("/") 
-                        ||string.contains("http") 
-                        ||string.contains("www")
-                        ||string.matches(".*\\.")))) {
+                .noneMatch((string) -> (string.contains("/")
+                        || string.contains("http")
+                        || string.contains("www")
+                        || string.matches(".*\\.")))) {
+
+            for (String address : config.getStringList("whitelistedAddresses")) {
+                if (message.contains(address)) {
+                    return true;
+                }
+            }
             return false;
         }
         return true;
